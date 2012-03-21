@@ -19,7 +19,7 @@ module TextileExtensionPack
 
     def video(opts)
       file_name, text, img = opts[:text].split('|').map! { |str| str.strip }
-      html = ""
+      html = %Q{<div class="video">\n}
       html << %Q{<div class="video-wrapper #{opts[:class]}">\n}
       html << %Q{<div class="video-wrapper-inner">\n}
       html << %Q{<div class="video-wrapper-inner-inner">\n}
@@ -31,9 +31,10 @@ module TextileExtensionPack
                 <param name="movie" value="/mediaelements/flashmediaelement.swf"/>
                 <param name="flashvars" value="controls=true&amp;file=/files/videos/#{file_name}.mp4"/>
               </object> }
+      html << %Q{</div>\n}
+      html << %Q{</div>\n}
+      html << %Q{</div>\n}
       html << %Q{  <p>#{text}</p>\n} if text.present?
-      html << %Q{</div>\n}
-      html << %Q{</div>\n}
       html << %Q{</div>\n}
     end
   end
