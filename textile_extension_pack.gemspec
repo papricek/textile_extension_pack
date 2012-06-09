@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
   gem.name = 'textile_extension_pack'
-  gem.version = '0.0.5'
+  gem.version = '0.0.6'
   gem.date = '2012-03-11'
   gem.summary = "Textile extension pack"
   gem.description = "Extends textile with some custom tags."
